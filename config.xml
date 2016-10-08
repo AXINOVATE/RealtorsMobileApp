@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.nar.mobapp" versionCode = "214"  version="1.1.6">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.nar.mobapp" versionCode = "214"  version="1.0.0">
   <name>NAR Mobile App</name>
   <description>NAR app</description>
   <author href="http://axinovate.com" email="info@axinovate.com">Axinovate Team</author>
