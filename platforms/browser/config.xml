@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.olam.cmsapp" version="1.1.6" versionCode="214" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>CMS Mobile App</name>
-    <description>OLAM CMS app</description>
+<widget id="com.nar.mobapp" version="1.0.0" versionCode="214" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>NAR Mobile App</name>
+    <description>NAR app</description>
     <author email="info@axinovate.com" href="http://axinovate.com">Axinovate Team</author>
     <content src="index.html" />
     <gap:plugin name="org.apache.cordova.battery-status" />
@@ -64,4 +64,5 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
+    <preference name="android-build-tool" value="gradle" />
 </widget>
