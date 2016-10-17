@@ -22,6 +22,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+    <gap:plugin name="pushbots-cordova-plugin" source="npm" />
     <icon src="icon.png" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/android-icon-36x36.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/android-icon-48x48.png" />

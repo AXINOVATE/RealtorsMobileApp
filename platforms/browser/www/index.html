@@ -43,25 +43,17 @@
 						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
 			}
-		var push = PushNotification.init({
-				android: {
-					senderID: "351384489832"
-				},
-				browser: {
-					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-				},
-				ios: {
-					alert: "true",
-					badge: "true",
-					sound: "true"
-				},
-				windows: {}
-			});
+		window.plugins.PushbotsPlugin.initialize("PUSHBOTS_APPLICATIONID", {"android":{"sender_id":"SENDER_ID"}});
 
-		push.on('registration', function(data) {
-			// data.registrationId
-			log.innerHTML = "reg id : " + data.registrationId;
-		});			
+		// First time registration
+		// This will be called on token registration/refresh with Android and with every runtime with iOS
+		window.plugins.PushbotsPlugin.on("registered", function(token){
+			log.innerHTML="Registered Id:" + token;
+		});
+
+		window.plugins.PushbotsPlugin.getRegistrationId(function(token){
+			 log.innerHTML="Registration Id:" + token;
+		});	
 			
 		}
 		function goToUrl(){
