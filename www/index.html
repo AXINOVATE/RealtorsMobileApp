@@ -13,7 +13,6 @@
 			<!--img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />-->
 			<img id="logo-image1" src="img/logo.png">
 			<h2>NAR Mobile App</h2>
-			<!--<p>Accessible only over OLAM VPN</p> -->
 		</div>
 		<div id="loading1" style="display:none;">
 			<!--
@@ -41,49 +40,10 @@
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
 				setTimeout(
 					function(){
-						window.open('http://xucorelms.com/nartesting/home/login','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
 			}		
-			/* push notification */
-			/*if(typeof PushNotification == 'function'){
-				log.innerHTML("init Present<br>");
-			}else{
-				log.innerHTML("init not present<br>");
-			}
-			var push = PushNotification.init({
-				android: {
-					senderID: "351384489832"
-				},
-				browser: {
-					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-				},
-				ios: {
-					alert: "true",
-					badge: "true",
-					sound: "true"
-				},
-				windows: {}
-			});
-
-		push.on('registration', function(data) {
-		log.innerHTML= log.innerHTML + "regist : " + data.registrationId;
-			// data.registrationId
-		});
-
-		push.on('notification', function(data) {
-		log.innerHTML = log.innerHTML + " notif : " + data.message;
-			// data.message,
-			// data.title,
-			// data.count,
-			// data.sound,
-			// data.image,
-			// data.additionalData
-		});
-
-		push.on('error', function(e) {
-			// e.message
-		}); */
-/*push notification */.
+			
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
@@ -97,7 +57,7 @@
 			else{
 			//	var body = document.getElementById('textBody');
 			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
-				window.open('http://xucorelms.com/nartesting/home/login','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
 			}
 		}
@@ -115,7 +75,7 @@
 			}
 		};
 	</script>			
-	</body>
+</body>
 <footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
 	<a target="_blank" class="footer-btn-group" style="border-right:2px solid black;" onClick=goToUrl(); >
 		<span>Home</span>
