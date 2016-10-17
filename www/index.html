@@ -45,6 +45,11 @@
 					},3000);
 			}		
 			/* push notification */
+			if(typeof PushNotification == 'function'){
+				log.innerHTML("init Present<br>");
+			}else{
+				log.innerHTML("init not present<br>");
+			}
 			var push = PushNotification.init({
 				android: {
 					senderID: "351384489832"
@@ -61,10 +66,12 @@
 			});
 
 		push.on('registration', function(data) {
+		log.innerHTML= log.innerHTML + "regist : " + data.registrationId;
 			// data.registrationId
 		});
 
 		push.on('notification', function(data) {
+		log.innerHTML = log.innerHTML + " notif : " + data.message;
 			// data.message,
 			// data.title,
 			// data.count,
@@ -108,7 +115,7 @@
 			}
 		};
 	</script>			
-</body>
+	</body>
 <footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
 	<a target="_blank" class="footer-btn-group" style="border-right:2px solid black;" onClick=goToUrl(); >
 		<span>Home</span>
