@@ -38,7 +38,7 @@
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
   <preference name="android-build-tool" value="gradle" />
-  <plugin name="phonegap-plugin-push" source="npm">
+  <gap:plugin name="phonegap-plugin-push" source="npm">
 	<param name="SENDER_ID" value="351384489832" />
   </plugin>
   <icon src="icon.png"/>
