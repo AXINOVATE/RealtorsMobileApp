@@ -44,7 +44,39 @@
 						window.open('http://xucorelms.com/nartesting/home/login','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},3000);
 			}		
-			
+			/* push notification */
+			var push = PushNotification.init({
+				android: {
+					senderID: "351384489832"
+				},
+				browser: {
+					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+				},
+				ios: {
+					alert: "true",
+					badge: "true",
+					sound: "true"
+				},
+				windows: {}
+			});
+
+		push.on('registration', function(data) {
+			// data.registrationId
+		});
+
+		push.on('notification', function(data) {
+			// data.message,
+			// data.title,
+			// data.count,
+			// data.sound,
+			// data.image,
+			// data.additionalData
+		});
+
+		push.on('error', function(e) {
+			// e.message
+		});
+/*push notification */.
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
