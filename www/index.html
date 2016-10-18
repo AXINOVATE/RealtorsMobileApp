@@ -44,6 +44,21 @@
 							window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 						},3000);				
 			}
+			
+			window.GcmPushPlugin.register(successHandler, errorHandler, {
+				"senderId":"124751054451",
+				"jsCallback":"onNotification"
+			});
+			
+		}
+		function onNotification(notification) {
+		  alert("Event Received: " + e); // { "extra": {"url" : "someurl.js" } }  
+		}
+		function successHandler(result) {
+		  alert("Token: " + result.gcm);
+		}
+		function errorHandler(error) {
+		  alert("Error: " + error);
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;

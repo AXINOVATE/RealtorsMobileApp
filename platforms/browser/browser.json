@@ -6,8 +6,23 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "cordova-plugin-gcmpushplugin": {
+            "PACKAGE_NAME": "com.realtors.narapp"
+        }
+    },
     "dependent_plugins": {},
-    "modules": [],
-    "plugin_metadata": {}
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-gcmpushplugin/www/gpp.js",
+            "id": "cordova-plugin-gcmpushplugin.GCMPushPlugin",
+            "pluginId": "cordova-plugin-gcmpushplugin",
+            "clobbers": [
+                "GcmPushPlugin"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-gcmpushplugin": "1.2.0"
+    }
 }
