@@ -3,7 +3,7 @@
 <head>
 <!--	<meta http-equiv="refresh" content="0; url=http://axinovate.com" />	-->
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/push.js"></script>
 </head>
@@ -31,7 +31,6 @@
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
-			
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
@@ -39,26 +38,27 @@
 			}
 			else{
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-					setTimeout(
-						function(){
-							window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-						},3000);				
+				setTimeout(
+					function(){
+						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+					},3000);
 			}
-			/*
-			window.GcmPushPlugin.register(successHandler, errorHandler, {
-				"senderId":"124751054451",
-				"jsCallback":"onNotification"
-			});*/
+		window.plugins.PushbotsPlugin.initialize("58052dfc4a9efa8e818b4567", {"android":{"sender_id":"124751054451"}});
+		Pushbots.on("notification:clicked", function(data){
+	console.log("clicked:" + JSON.stringify(data));
+	log.innerHTML="clicked : "+JSON.stringify(data);
+});
+
+		// First time registration
+		// This will be called on token registration/refresh with Android and with every runtime with iOS
+		window.plugins.PushbotsPlugin.on("registered", function(token){
+			log.innerHTML="Registered Id:" + token;
+		});
+
+		window.plugins.PushbotsPlugin.getRegistrationId(function(token){
+			 log.innerHTML="Registration Id:" + token;
+		});	
 			
-		}
-		function onNotification(notification) {
-		  alert("Event Received: " + e); // { "extra": {"url" : "someurl.js" } }  
-		}
-		function successHandler(result) {
-		  alert("Token: " + result.gcm);
-		}
-		function errorHandler(error) {
-		  alert("Error: " + error);
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
