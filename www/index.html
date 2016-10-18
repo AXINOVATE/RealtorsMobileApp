@@ -1,128 +1,60 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
 <head>
-<!--	<meta http-equiv="refresh" content="0; url=http://axinovate.com" />	-->
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/push.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
 </head>
-<body id="textBody">
-	<div id="html">
-		<div id="loading" style="background-image: url('bg.jpg')">
-			<!--img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />-->
-			<img id="logo-image1" src="img/logo.png">
-			<h2>NAR Mobile App</h2>
-		</div>
-		<div id="loading1" style="display:none;">
-			<!--
-			<img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" />	-->
-			<div class="error_msg" id="message"></div><br><br>
-			<div class="error_log" id="log_msg"></div>
-		</div>	
-	</div>
-	<script type="text/javascript">
-		document.addEventListener("deviceready", onDeviceReady, false);
 
-		// device APIs are available
-		
-		function onDeviceReady() {
-			var  networkConnectionType =  navigator.network.connection.type;
-         	var element = document.getElementById('message');
-			var log = document.getElementById('log_msg');
-			element.innerHTML = '';
-			var noti=0;
-			if(networkConnectionType=='none'){
-				document.getElementById('loading1').style.display = "block";
-				element.innerHTML = 'Please connect to your internet connection and try again!';
-				alert(element.innerHTML);
-			}
-			else{
-			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-			/*	window.plugins.PushbotsPlugin.initialize("58052dfc4a9efa8e818b4567", {"android":{"sender_id":"124751054451"}});
-
-				// Should be called once the notification is clicked
-				window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
-					//alert("clicked:" + JSON.stringify(data));
-					//alert(JSON.stringify(data.link));
-					window.open(data.link,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-					noti=1;
-				});
-
-				// First time registration
-				// This will be called on token registration/refresh with Android and with every runtime with iOS
-				window.plugins.PushbotsPlugin.on("registered", function(token){
-					alert("Registered Id:" + token);
-				});
-
-				window.plugins.PushbotsPlugin.getRegistrationId(function(token){
-					 alert("Registration Id:" + token);
-				});	 */
-				var push = PushNotification.init({
-    "android": {
-        "senderID": "124751054451",
-        "icon": "phonegap",
-        "iconColor": "blue"
-    },
-    browser: {
-        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-    },
-    "ios": {
-        "alert": "true",
-        "badge": "true",
-        "sound": "true"
-    },
-    "windows": {}
-});
-alert(push);
-				setTimeout(
-						function(){
-							if(noti==0){
-								setTimeout(
-								function(){
-									window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-								},3000);
-							}
-				},2000);
-			}
-		}
-		function goToUrl(){
-			var  networkConnectionType =  navigator.network.connection.type;
-			if(networkConnectionType=='none'){
-				loader();
-				var element = document.getElementById('message');
-				element.innerHTML = 'Please connect to your internet connection and try again!';
-				alert(element.innerHTML);
-				return false;
-			}
-			else{
-			//	var body = document.getElementById('textBody');
-			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
-				window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-				return false;
-			}
-		}
-		function exitWindow(){
-			navigator.app.exitApp();
-		}
-		
-		
-		var screen_width = screen.width;
-		var base_url = window.location.origin;
-		function loader(){
-			if(screen_width<992){
-				var body = document.getElementById('textBody');
-				body.innerHTML = '<div id="loading1"><img id="loading-image1" src="loading.gif" alt="Loading..." /></div>';
-			}
-		};
-	</script>			
+<body>
+    <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="registration" class="blink">
+            <p class="event waiting">Requesting Registration ID</p>
+            <p class="event received">Registered</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
 </body>
-<footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
-	<a target="_blank" class="footer-btn-group" style="border-right:2px solid black;" onClick=goToUrl(); >
-		<span>Home</span>
-	</a>
-	<a target="_blank" class="footer-btn-group" onClick=exitWindow(); >
-		<span>Exit</span>
-	</a>
-</footer>
+
 </html>
