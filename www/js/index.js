@@ -55,15 +55,15 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-			alert("First : "+ data.registrationId);
+			alert('registration event: ' + data.registrationId);
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-				alert("Not Same : "+ data.registrationId);
+				alert('registrationId', data.registrationId);
             }
-			alert("Old Reg "+oldRegId);
+alert('old', oldRegId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
@@ -74,7 +74,6 @@ var app = {
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
-			alert("Push error " + e.message);
         });
 
         push.on('notification', function(data) {
