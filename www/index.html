@@ -3,7 +3,7 @@
 <head>
 <!--	<meta http-equiv="refresh" content="0; url=http://axinovate.com" />	-->
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/push.js"></script>
 </head>
@@ -31,7 +31,6 @@
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
-			
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
@@ -39,33 +38,31 @@
 			}
 			else{
 			//	element.innerHTML = '<a target="_blank" onClick=goToUrl();>Go to test-SkillAdda</a>';
-					setTimeout(
-						function(){
-							window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-						},3000);				
+				setTimeout(
+					function(){
+						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+					},3000);
 			}
-			/*var push = PushNotification.init({ "android": {"senderID": "124751054451"},
-				 "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-
-			push.on('registration', function(data) {
-				// data.registrationId
-				alert(data.registrationId);
+		var push = PushNotification.init({
+				android: {
+					senderID: "351384489832"
+				},
+				browser: {
+					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+				},
+				ios: {
+					alert: "true",
+					badge: "true",
+					sound: "true"
+				},
+				windows: {}
 			});
 
-			push.on('notification', function(data) {
-				// data.message,
-				// data.title,
-				// data.count,
-				// data.sound,
-				// data.image,
-				// data.additionalData
-				alert(data);
-			});
-
-			push.on('error', function(e) {
-				// e.message
-				alert(e);
-			});*/
+		push.on('registration', function(data) {
+			// data.registrationId
+			log.innerHTML = "reg id : " + data.registrationId;
+		});			
+			
 		}
 		function goToUrl(){
 			var  networkConnectionType =  navigator.network.connection.type;
