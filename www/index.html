@@ -48,6 +48,7 @@
 		// Should be called once the notification is clicked
 		window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
 			alert("clicked:" + JSON.stringify(data));
+			alert("clicked:" + JSON.stringify(data.link));
 		});
 
 		// First time registration
