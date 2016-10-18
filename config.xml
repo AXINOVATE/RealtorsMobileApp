@@ -38,7 +38,6 @@
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
-  <plugin name="cordova-plugin-whitelist" version="1"/>
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/android-icon-36x36.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/android-icon-48x48.png" gap:platform="android" gap:qualifier="mdpi"/>
