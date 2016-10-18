@@ -31,6 +31,7 @@
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
+			var link='http://xucorelms.com/nartesting';
 			var noti=0;
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
@@ -45,7 +46,8 @@
 				window.plugins.PushbotsPlugin.on("notification:clicked", function(data){
 					//alert("clicked:" + JSON.stringify(data));
 					//alert(JSON.stringify(data.link));
-					window.open(data.link,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+					link=data.link;
+					//window.open(data.link,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					noti=1;
 				});
 
@@ -58,7 +60,9 @@
 				window.plugins.PushbotsPlugin.getRegistrationId(function(token){
 					 alert("Registration Id:" + token);
 				});	
-				setTimeout(
+				window.open(link,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				
+				/*setTimeout(
 						function(){
 							if(noti==0){
 								setTimeout(
@@ -66,7 +70,7 @@
 									window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 								},3000);
 							}
-				},2000);
+				},2000);*/
 			}
 		}
 		function goToUrl(){
