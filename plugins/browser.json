@@ -6,11 +6,6 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {
-        "phonegap-plugin-push": {
-            "SENDER_ID": "124751054451",
-            "PACKAGE_NAME": "com.realtors.narapp"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {}
 }
