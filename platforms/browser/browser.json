@@ -6,8 +6,23 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "pushbots-cordova-plugin": {
+            "PACKAGE_NAME": "com.realtors.narapp"
+        }
+    },
     "dependent_plugins": {},
-    "modules": [],
-    "plugin_metadata": {}
+    "modules": [
+        {
+            "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
+            "id": "pushbots-cordova-plugin.PushbotsPlugin",
+            "pluginId": "pushbots-cordova-plugin",
+            "clobbers": [
+                "PushbotsPlugin"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "pushbots-cordova-plugin": "1.3.9"
+    }
 }

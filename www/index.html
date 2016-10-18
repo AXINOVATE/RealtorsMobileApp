@@ -31,7 +31,7 @@
          	var element = document.getElementById('message');
 			var log = document.getElementById('log_msg');
 			element.innerHTML = '';
-			/*var noti=0;
+			var noti=0;
 			window.plugins.PushbotsPlugin.initialize("58052dfc4a9efa8e818b4567", {"android":{"sender_id":"124751054451"}});
 
 			// Should be called once the notification is clicked
@@ -50,7 +50,7 @@
 
 			window.plugins.PushbotsPlugin.getRegistrationId(function(token){
 				 alert("Registration Id:" + token);
-			});	 */
+			});	
 			if(networkConnectionType=='none'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';

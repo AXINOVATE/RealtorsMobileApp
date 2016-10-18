@@ -6,6 +6,10 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {},
+    "installed_plugins": {
+        "pushbots-cordova-plugin": {
+            "PACKAGE_NAME": "com.realtors.narapp"
+        }
+    },
     "dependent_plugins": {}
 }
