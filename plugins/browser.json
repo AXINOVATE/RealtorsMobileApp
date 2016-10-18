@@ -7,7 +7,8 @@
         "files": {}
     },
     "installed_plugins": {
-        "pushbots-cordova-plugin": {
+        "phonegap-plugin-push": {
+            "SENDER_ID": "124751054451",
             "PACKAGE_NAME": "com.realtors.narapp"
         }
     },
