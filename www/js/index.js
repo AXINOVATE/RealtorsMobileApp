@@ -36,7 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
 		
 			/* Redirect */
-			/*var connectionStatus = navigator.onLine ? 'online' : 'offline';
+			var connectionStatus = navigator.onLine ? 'online' : 'offline';
 			if(connectionStatus=='offline'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
@@ -47,7 +47,7 @@ var app = {
 					function(){
 						window.open('http://xucorelms.com/nartesting/','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},2000);
-			}*/
+			}
 			/* Redirect */
         app.setupPush();
     },
@@ -83,8 +83,8 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-			alert("before function");
-			app.redirectToSite();
+			//alert("before function");
+			//app.redirectToSite();
 			
         });
 
@@ -100,9 +100,9 @@ var app = {
                 'Ok'                  // buttonName
             ); 
        });
-    },
-	redirectToSite: function(){
-		/* Redirect */
+    }
+	/*redirectToSite: function(){
+		// Redirect 
 		alert("here");
 		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
 		alert(myLink);
@@ -118,6 +118,6 @@ var app = {
 						window.open(myLink,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},2000);
 			}
-			/* Redirect */
-	}
+			// Redirect 
+	}*/
 };
