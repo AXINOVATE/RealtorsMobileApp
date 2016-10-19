@@ -61,9 +61,9 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-				alert('registrationId'+data.registrationId);
+				alert('registrationId', data.registrationId);
             }
-alert('old'+oldRegId);
+alert('old', oldRegId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
