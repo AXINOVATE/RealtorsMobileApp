@@ -57,7 +57,7 @@ var app = {
             "android": {
                 "senderID": "124751054451"
             },
-            "browser": { "pushServiceURL": 'http://push.api.phonegap.com/v1/push'},
+            "browser": {},
             "ios": {
                 "sound": true,
                 "vibration": true,
@@ -83,7 +83,7 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-			app.RedirectToSite();
+			app.redirectToSite();
 			
         });
 
@@ -100,7 +100,7 @@ var app = {
             ); 
        });
     }
-	RedirectToSite: function(){
+	redirectToSite: function(){
 		/* Redirect */
 		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
 		alert(myLink);
