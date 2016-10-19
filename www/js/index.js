@@ -83,6 +83,7 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
+			alert("before function");
 			app.redirectToSite();
 			
         });
@@ -102,6 +103,7 @@ var app = {
     },
 	redirectToSite: function(){
 		/* Redirect */
+		alert("here");
 		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
 		alert(myLink);
 			var connectionStatus = navigator.onLine ? 'online' : 'offline';
