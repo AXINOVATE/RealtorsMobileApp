@@ -34,7 +34,19 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
-        console.log('calling setup push');
+		var connectionStatus = navigator.onLine ? 'online' : 'offline';
+		alert(connectionStatus);
+        if(connectionStatus=='offline'){
+				document.getElementById('loading1').style.display = "block";
+				element.innerHTML = 'Please connect to your internet connection and try again!';
+				alert(element.innerHTML);
+			}
+			else{
+				setTimeout(
+					function(){
+						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+					},3000);
+			}
         app.setupPush();
     },
     setupPush: function() {
@@ -55,15 +67,12 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-			alert('registration event: ' + data.registrationId);
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-				alert('registrationId'+data.registrationId);
             }
-alert('old'+oldRegId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
@@ -75,17 +84,8 @@ alert('old'+oldRegId);
         push.on('error', function(e) {
             console.log("push error = " + e.message);
         });
-		PushNotification.hasPermission(function(data) {
-			if (data.isEnabled) {
-				console.log('isEnabled');
-				alert("Enabled");
-			}else{
-				alert("Not Enabled");
-			}
-		});
         push.on('notification', function(notification) {
             console.log('notification event');
-			alert(JSON.stringify([notification]));
             navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback

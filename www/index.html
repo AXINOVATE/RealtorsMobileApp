@@ -79,6 +79,7 @@
 			}*/
 		}
 		function onOffline() {
+		alert("offline");
 			loader();
 			var element = document.getElementById('message');
 			element.innerHTML = 'Please connect to your internet connection and try again!';
@@ -86,6 +87,7 @@
 			return false;
 		}
 		function onOnline() {
+		alert("Online");
 			window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 			return false;
 		}
