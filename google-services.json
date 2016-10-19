@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "124751054451",
+    "firebase_url": "https://realtors-8f3e7.firebaseio.com",
+    "project_id": "realtors-8f3e7",
+    "storage_bucket": "realtors-8f3e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124751054451:android:b6b05a91afde9833",
+        "android_client_info": {
+          "package_name": "com.realtors.narapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124751054451-69n0j95ndkl0l2a40uu6t1seh40jjrlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdZLxkf5DRZBhiym7YCborDCfl-DQCMBQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
