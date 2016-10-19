@@ -76,21 +76,15 @@ alert('old'+oldRegId);
             console.log("push error = " + e.message);
         });
 
-        push.on('notification', function(data) {
+        push.on('notification', function(notification) {
             console.log('notification event');
-			alert(data);
-            navigator.notification.alert(
+			alert(JSON.stringify([notification]));
+            /*navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-            );
+            ); */
        });
-	   push.on("notification:clicked", function(data){
-			//alert("clicked:" + JSON.stringify(data));
-			alert(JSON.stringify(data.link));
-			//window.open(data.link,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-			
-		});
     }
 };
