@@ -83,8 +83,6 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-			alert("before function");
-			app.redirectToSite();
 			
         });
 
@@ -101,23 +99,4 @@ var app = {
             ); 
        });
     }
-	/*redirectToSite: function(){
-		// Redirect 
-		alert("here");
-		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
-		alert(myLink);
-			var connectionStatus = navigator.onLine ? 'online' : 'offline';
-			if(connectionStatus=='offline'){
-				document.getElementById('loading1').style.display = "block";
-				element.innerHTML = 'Please connect to your internet connection and try again!';
-				alert(element.innerHTML);
-			}
-			else{
-				setTimeout(
-					function(){
-						window.open(myLink,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-					},2000);
-			}
-			// Redirect 
-	}*/
 };
