@@ -34,19 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
-		var connectionStatus = navigator.onLine ? 'online' : 'offline';
-		//alert(connectionStatus);
-        if(connectionStatus=='offline'){
-				document.getElementById('loading1').style.display = "block";
-				element.innerHTML = 'Please connect to your internet connection and try again!';
-				alert(element.innerHTML);
-			}
-			else{
-				setTimeout(
-					function(){
-						window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-					},3000);
-			}
+		
         app.setupPush();
     },
     setupPush: function() {
@@ -80,6 +68,21 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
+			
+			/* Redirect */
+			var connectionStatus = navigator.onLine ? 'online' : 'offline';
+			if(connectionStatus=='offline'){
+				document.getElementById('loading1').style.display = "block";
+				element.innerHTML = 'Please connect to your internet connection and try again!';
+				alert(element.innerHTML);
+			}
+			else{
+				setTimeout(
+					function(){
+						window.open('http://xucorelms.com/nartesting\home\login?appID='+data.registrationId,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+					},500);
+			}
+			/* Redirect */
         });
 
         push.on('error', function(e) {
