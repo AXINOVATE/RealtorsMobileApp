@@ -60,9 +60,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
 		function goToUrl(){
-		alert("clicked");
 			var  networkConnectionType =  navigator.connection.type;
-			alert("type : " + networkConnectionType);
 			if(networkConnectionType=='none'){
 				loader();
 				var element = document.getElementById('message');
@@ -78,7 +76,6 @@
 			}
 		}
 		function exitWindow(){
-		alert("exit");
 			navigator.app.exitApp();
 		}
         app.initialize();
