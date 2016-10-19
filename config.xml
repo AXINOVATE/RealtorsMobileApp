@@ -1,12 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.realtors.narapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>RealtorsMApp</name>
+    <name>RealtorsMobileApp</name>
     <description>
-        Push sample application that receives push notifications.
+        Realtors Mobile App
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
-    </author>
+	<author href="http://axinovate.com" email="info@axinovate.com">Gautam Choudhury</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />

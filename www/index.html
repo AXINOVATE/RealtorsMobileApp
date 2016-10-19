@@ -39,23 +39,54 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
 </head>
 
-<body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="registration" class="blink">
-            <p class="event waiting">Requesting Registration ID</p>
-            <p class="event received">Registered</p>
-        </div>
-    </div>
+<body id="textBody">
+	<div id="html">
+		<div id="loading" style="background-image: url('bg.jpg')">
+			<!--img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" />-->
+			<img id="logo-image1" src="img/logo.png">
+			<h2>NAR Mobile App</h2>
+		</div>
+		<div id="loading1" style="display:none;">
+			<!--
+			<img id="loading-image" src="skilladda_logo_black.png" alt="SkillAdda" />	-->
+			<div class="error_msg" id="message"></div><br><br>
+			<div class="error_log" id="log_msg"></div>
+		</div>	
+	</div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="push.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
+	function goToUrl(){
+			var  networkConnectionType =  navigator.network.connection.type;
+			if(networkConnectionType=='none'){
+				loader();
+				var element = document.getElementById('message');
+				element.innerHTML = 'Please connect to your internet connection and try again!';
+				alert(element.innerHTML);
+				return false;
+			}
+			else{
+			//	var body = document.getElementById('textBody');
+			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
+				window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+				return false;
+			}
+		}
+		function exitWindow(){
+			navigator.app.exitApp();
+		}
         app.initialize();
     </script>
 </body>
-
+<footer style="position:fixed; bottom:0px; width:100%; z-index:99; background-color:#2F2F2F; opacity:0.4;">
+	<a target="_blank" class="footer-btn-group" style="border-right:2px solid black;" onClick=goToUrl(); >
+		<span>Home</span>
+	</a>
+	<a target="_blank" class="footer-btn-group" onClick=exitWindow(); >
+		<span>Exit</span>
+	</a>
+</footer>
 </html>
