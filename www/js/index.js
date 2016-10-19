@@ -43,7 +43,7 @@ var app = {
             "android": {
                 "senderID": "124751054451"
             },
-            "browser": {},
+            "browser": {"senderID": "124751054451"},
             "ios": {
                 "sound": true,
                 "vibration": true,

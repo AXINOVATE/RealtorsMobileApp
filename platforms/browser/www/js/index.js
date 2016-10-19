@@ -43,7 +43,7 @@ var app = {
             "android": {
                 "senderID": "124751054451"
             },
-            "browser": {},
+            "browser": {"senderID": "124751054451"},
             "ios": {
                 "sound": true,
                 "vibration": true,
@@ -61,9 +61,9 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-				alert('registrationId', data.registrationId);
+				alert('registrationId'+data.registrationId);
             }
-alert('old', oldRegId);
+alert('old'+oldRegId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
@@ -76,14 +76,15 @@ alert('old', oldRegId);
             console.log("push error = " + e.message);
         });
 
-        push.on('notification', function(data) {
+        push.on('notification', function(notification) {
             console.log('notification event');
-            navigator.notification.alert(
+			alert(JSON.stringify([notification]));
+            /*navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-            );
+            ); */
        });
     }
 };
