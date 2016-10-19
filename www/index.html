@@ -92,6 +92,14 @@
 		function exitWindow(){
 			navigator.app.exitApp();
 		}
+		var screen_width = screen.width;
+		var base_url = window.location.origin;
+		function loader(){
+			if(screen_width<992){
+				var body = document.getElementById('textBody');
+				body.innerHTML = '<div id="loading1"><img id="loading-image1" src="loading.gif" alt="Loading..." /></div>';
+			}
+		};
         app.initialize();
     </script>
 </body>
