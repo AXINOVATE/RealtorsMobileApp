@@ -78,6 +78,7 @@ alert('old'+oldRegId);
 
         push.on('notification', function(data) {
             console.log('notification event');
+			alert(data);
             navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
