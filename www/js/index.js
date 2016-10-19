@@ -102,7 +102,7 @@ var app = {
     }
 	RedirectToSite: function(){
 		/* Redirect */
-		var myLink= 'http://xucorelms.com/nartesting/home/login?appID='+localStorage.getItem('registrationId');
+		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
 		alert(myLink);
 			var connectionStatus = navigator.onLine ? 'online' : 'offline';
 			if(connectionStatus=='offline'){
