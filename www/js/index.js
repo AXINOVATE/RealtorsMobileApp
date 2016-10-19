@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
 		var connectionStatus = navigator.onLine ? 'online' : 'offline';
-		alert(connectionStatus);
+		//alert(connectionStatus);
         if(connectionStatus=='offline'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
