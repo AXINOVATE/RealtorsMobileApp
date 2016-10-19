@@ -60,9 +60,9 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
 		function goToUrl(){
-			document.addEventListener("offline", onOffline, false);
-			document.addEventListener("online", onOnline, false);
-			/*var connectionStatus = navigator.onLine ? 'online' : 'offline';
+			//document.addEventListener("offline", onOffline, false);
+			//document.addEventListener("online", onOnline, false);
+			var connectionStatus = navigator.onLine ? 'online' : 'offline';
 			alert(connectionStatus);
 			if(connectionStatus=='offline'){
 				loader();
@@ -76,9 +76,9 @@
 			//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
 				window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 				return false;
-			}*/
+			}
 		}
-		function onOffline() {
+		/*function onOffline() {
 		//alert("offline");
 			loader();
 			var element = document.getElementById('message');
@@ -90,7 +90,7 @@
 		//alert("Online");
 			window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 			return false;
-		}
+		} */
 		function exitWindow(){
 			navigator.app.exitApp();
 		}
