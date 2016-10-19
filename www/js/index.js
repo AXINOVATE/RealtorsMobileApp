@@ -103,6 +103,7 @@ var app = {
 	RedirectToSite: function(appID){
 		/* Redirect */
 		var myLink= 'http://xucorelms.com/nartesting/home/login?appID='+appID;
+		alert(myLink);
 			var connectionStatus = navigator.onLine ? 'online' : 'offline';
 			if(connectionStatus=='offline'){
 				document.getElementById('loading1').style.display = "block";
