@@ -86,12 +86,12 @@ alert('old'+oldRegId);
         push.on('notification', function(notification) {
             console.log('notification event');
 			alert(JSON.stringify([notification]));
-            /*navigator.notification.alert(
+            navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-            ); */
+            ); 
        });
     }
 };
