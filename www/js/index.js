@@ -83,7 +83,7 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-			app.RedirectToSite(data.registrationId);
+			app.RedirectToSite();
 			
         });
 
@@ -100,9 +100,9 @@ var app = {
             ); 
        });
     }
-	RedirectToSite: function(appID){
+	RedirectToSite: function(){
 		/* Redirect */
-		var myLink= 'http://xucorelms.com/nartesting/home/login?appID='+appID;
+		var myLink= 'http://xucorelms.com/nartesting/home/login?appID='+localStorage.getItem('registrationId');
 		alert(myLink);
 			var connectionStatus = navigator.onLine ? 'online' : 'offline';
 			if(connectionStatus=='offline'){
