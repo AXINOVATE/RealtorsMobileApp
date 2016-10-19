@@ -81,7 +81,7 @@ var app = {
 				setTimeout(
 					function(){
 						window.open('http://xucorelms.com/nartesting/','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-					},1000);
+					},2000);
 			}
 			/* Redirect */
         });
