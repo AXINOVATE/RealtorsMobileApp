@@ -62,6 +62,7 @@ var app = {
                 // Post registrationId to your app server as the value has changed
             }
 			alert(localStorage.getItem('registrationId'));
+			var myLink="'+http://xucorelms.com/nartesting\home\login?appID="+data.registrationId+'"
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
@@ -79,7 +80,7 @@ var app = {
 			else{
 				setTimeout(
 					function(){
-						window.open('http://xucorelms.com/nartesting\home\login?appID='+data.registrationId,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						window.open(myLink,'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},500);
 			}
 			/* Redirect */
