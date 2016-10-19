@@ -86,4 +86,23 @@ alert('old = '+oldRegId);
             ); 
        });
     }
+	function goToUrl(){
+		var  networkConnectionType =  navigator.network.connection.type;
+		if(networkConnectionType=='none'){
+			loader();
+			var element = document.getElementById('message');
+			element.innerHTML = 'Please connect to your internet connection and try again!';
+			alert(element.innerHTML);
+			return false;
+		}
+		else{
+		//	var body = document.getElementById('textBody');
+		//	body.innerHTML = '<div id="loading"><img id="loading-image" src="skillAdda.jpg" alt="SkillAdda" /></div><div id="loading1" style="display:none;"><div class="error_msg" id="message"></div><br><br><div class="error_log" id="log_msg"></div></div>';
+			window.open('http://xucorelms.com/nartesting','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+			return false;
+		}
+	}
+	function exitWindow(){
+		navigator.app.exitApp();
+	}
 };
