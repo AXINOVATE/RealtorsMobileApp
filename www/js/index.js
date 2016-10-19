@@ -43,7 +43,7 @@ var app = {
             "android": {
                 "senderID": "124751054451"
             },
-            "browser": {},
+            "browser": { "pushServiceURL": 'http://push.api.phonegap.com/v1/push'},
             "ios": {
                 "sound": true,
                 "vibration": true,
@@ -75,7 +75,14 @@ alert('old'+oldRegId);
         push.on('error', function(e) {
             console.log("push error = " + e.message);
         });
-
+		PushNotification.hasPermission(function(data) {
+			if (data.isEnabled) {
+				console.log('isEnabled');
+				alert("Enabled");
+			}else{
+				alert("Not Enabled");
+			}
+		});
         push.on('notification', function(notification) {
             console.log('notification event');
 			alert(JSON.stringify([notification]));
