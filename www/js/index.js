@@ -83,7 +83,7 @@ var app = {
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-			//app.redirectToSite();
+			app.redirectToSite();
 			
         });
 
@@ -99,8 +99,8 @@ var app = {
                 'Ok'                  // buttonName
             ); 
        });
-    }
-	/*redirectToSite: function(){
+    },
+	redirectToSite: function(){
 		/* Redirect */
 		var myLink= 'http://xucorelms.com/nartesting/home/login?appID=as';
 		alert(myLink);
@@ -117,5 +117,5 @@ var app = {
 					},2000);
 			}
 			/* Redirect */
-	}*/
+	}
 };
