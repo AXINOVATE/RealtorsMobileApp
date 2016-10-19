@@ -45,7 +45,7 @@ var app = {
 			else{
 				setTimeout(
 					function(){
-						window.open('http://xucorelms.com/nartesting/home/login?appID=sfdg','_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
+						window.open('http://xucorelms.com/nartesting/home/login?appID='+localStorage.getItem('registrationId'),'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
 					},5000);
 			}
 			/* Redirect */
