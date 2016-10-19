@@ -61,9 +61,9 @@ var app = {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
-				alert('registrationId', data.registrationId);
+				alert('registrationId = '+data.registrationId);
             }
-alert('old', oldRegId);
+alert('old = '+oldRegId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
@@ -75,14 +75,6 @@ alert('old', oldRegId);
         push.on('error', function(e) {
             console.log("push error = " + e.message);
         });
-		PushNotification.hasPermission(function(data) {
-			if (data.isEnabled) {
-				console.log('isEnabled');
-				alert("Enabled");
-			}else{
-				alert("Not Enabled");
-			}
-		});
         push.on('notification', function(notification) {
             console.log('notification event');
 			alert(JSON.stringify([notification]));
