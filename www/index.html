@@ -61,6 +61,7 @@
     <script type="text/javascript">
 		function goToUrl(){
 			var  networkConnectionType =  navigator.connection.type;
+			alert(networkConnectionType);
 			if(networkConnectionType=='none'){
 				loader();
 				var element = document.getElementById('message');
