@@ -34,8 +34,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
-		var  networkConnectionType =  navigator.connection.type;
-        if(networkConnectionType=='none'){
+		var connectionStatus = navigator.onLine ? 'online' : 'offline';
+        if(connectionStatus=='offline'){
 				document.getElementById('loading1').style.display = "block";
 				element.innerHTML = 'Please connect to your internet connection and try again!';
 				alert(element.innerHTML);
