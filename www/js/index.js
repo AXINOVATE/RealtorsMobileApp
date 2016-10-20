@@ -46,7 +46,7 @@ var app = {
 				setTimeout(
 					function(){
 						window.open('http://xucorelms.com/nartesting/home/login?appID='+localStorage.getItem('registrationId'),'_self','location=no','hidden=yes','clearsessioncache=yes','toolbar=no','clearcache=yes','fullscreen=yes','hardwareback=no');
-					},1000);
+					},5000);
 			}
 			/* Redirect */
         app.setupPush();
@@ -75,7 +75,7 @@ var app = {
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-			//alert(localStorage.getItem('registrationId'));
+			alert(localStorage.getItem('registrationId'));
 			//var myLink="'http://xucorelms.com/nartesting/home/login?appID="+data.registrationId+'";
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
