@@ -75,7 +75,7 @@ var app = {
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-			//alert(localStorage.getItem('registrationId'));
+			alert(data.registrationId);
 			//var myLink="'http://xucorelms.com/nartesting/home/login?appID="+data.registrationId+'";
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
