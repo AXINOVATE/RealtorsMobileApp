@@ -55,7 +55,7 @@ var app = {
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
-                "senderID": "124751054451"
+                "senderID": "401823884596"
             },
             "browser": {},
             "ios": {
@@ -90,14 +90,15 @@ var app = {
         push.on('error', function(e) {
             console.log("push error = " + e.message);
         });
-        push.on('notification', function(notification) {
+        push.on('notification', function(data) {
             console.log('notification event');
-            navigator.notification.alert(
+			alert(data.mylink);
+            /*navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-            ); 
+            ); */
        });
     }
 };
